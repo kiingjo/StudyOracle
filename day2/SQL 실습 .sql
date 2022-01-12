@@ -72,11 +72,21 @@ SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
 SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
     FROM EMP
         WHERE ENAME LIKE '__RD';--RD로 끝나긴 하는데 총 글자길이가 4글자 활용도 가능
-        
-        
+
+--NULL, 함수명NVL() 나중에       
+SELECT ENAME, JOB, SAL, COMM
+    FROM EMP
+        WHERE COMM IS NOT NULL;
+    
+--집합
+SELECT EMPNO, ENAME, JOB FROM EMP
+    WHERE COMM IS NOT NULL
+UNION
+SELECT DEPTNO, DNAME, LOC FROM DEPT;
+--그냥 진짜 두개의 테이블을 합친것이다. 이때 합치려는 컬럼의 갯수와 형식이 같아야한다!
+--UNION ALL 은 중복상관없이 모두 나오는것이다.
 
 
-        
 
 
 
