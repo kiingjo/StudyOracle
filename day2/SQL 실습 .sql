@@ -1,0 +1,85 @@
+--행단위로 조회하는 SELECTION(조건가지고 보겠다)
+SELECT * FROM EMP
+    WHERE SAL=5000;
+    
+SELECT * FROM EMP
+    WHERE JOB = 'CLERK';
+
+--IS NULL 구문, AND와 OR 구문
+SELECT *FROM EMP
+    WHERE COMM=0 OR COMM IS NULL;
+    
+SELECT * FROM EMP
+    WHERE COMM IS NULL AND JOB='ANALYST';
+
+--NVL2(COL1,COL2,COL3) COL1값이 NULL이 아니면 COL2 NULL이면 COL3값   
+SELECT EMPNO, ENAME, SAL, COMM,
+    NVL2(COMM, COMM, 0) "NVL2"
+        FROM EMP;
+
+-- 조인 : 두개 이상의 테이블을 하나의 테이블처럼 조회하는 방법
+SELECT E.EMPNO, E.ENAME, E.JOB, E.HIREDATE , E.SAL, D.DEPTNO, D.DNAME--ALIAS하는법 알기
+    FROM EMP E JOIN DEPT D
+        ON E.DEPTNO = D.DEPTNO;
+    
+--DISTINCT 복습
+SELECT DISTINCT (JOB) FROM EMP;
+
+--별칭 ALIAS, ORDER BY 정렬
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        ORDER BY SAL DESC; --ASC 오름차순, DESC내림차순
+        
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE SAL*12 + NVL(COMM,0) >=10000; --ANNSAL로 못쓴다. 한쿼리 내에서는
+        
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE SAL <> 1000; --같지않다는 <>
+        
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE NOT SAL = 1000; 
+        
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE SAL IN(800,1600,5000);
+        
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE SAL=800 OR SAL=1600 OR SAL=5000;
+        
+--BETWEEN A AND B
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+       -- WHERE SAL >=1600 AND SAL <=2975;
+       WHERE SAL BETWEEN 1600 AND 2975;
+       
+--LIKE 찾고싶은 단어의 일부만 알고있을 때 사용
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE ENAME LIKE 'J%'; --J로 시작하는 것들 J%
+        
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE ENAME LIKE '%ES'; --ES로 끝나는 것들 %ES
+        
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE ENAME LIKE '%E%'; --중간에 E 들어가는 것들 %E%
+        
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE ENAME LIKE '__RD';--RD로 끝나긴 하는데 총 글자길이가 4글자 활용도 가능
+        
+        
+
+
+        
+
+
+
+
+        
+        

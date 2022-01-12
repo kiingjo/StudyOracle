@@ -1,0 +1,7 @@
+## 2일차 학습
+### WHERE절
+
+```SQL
+SELECT ENAME, JOB, SAL, SAL*12 + NVL(COMM,0) AS ANNSAL
+    FROM EMP
+        WHERE ENAME LIKE 'J%';
