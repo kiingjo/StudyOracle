@@ -7,9 +7,9 @@ Oracle 학습 리포지토리
  - SQL 기본 SELESCT문 학습
 
 ### 2일차
- - SELECT 응용
+- SELECT 응용
 - WHERE 절
-- 사칙연산
+- 사칙연산 
 - ALIAS
 - IN 절
 - BETWEEN AND
