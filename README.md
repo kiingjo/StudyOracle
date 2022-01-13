@@ -20,6 +20,7 @@ Oracle 학습 리포지토리
 - OUTER JOIN : LEFT,RIGHT JOIN
 - ANSI와 PL/SQL 차이
 - 3개 테이블 JOIN
+- 시퀀스 문법
 - CUD 개념
 - INSERT
 - UPDATE
