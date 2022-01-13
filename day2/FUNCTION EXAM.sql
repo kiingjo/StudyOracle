@@ -106,7 +106,6 @@ SELECT DEPTNO, NVL(JOB,'합계'), ROUND(AVG(SAL),0) 평균급여,
                  
 
 
-
         
 
         
