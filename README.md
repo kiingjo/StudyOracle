@@ -24,4 +24,4 @@ Oracle 학습 리포지토리
 - INSERT
 - UPDATE
 - DELETE
-- SQL 
+- SQL 테스트
