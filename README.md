@@ -16,4 +16,12 @@ Oracle 학습 리포지토리
 - LIKE문
 
 ### 3일차 학습
-- 
+- INNER JOIN
+- OUTER JOIN : LEFT,RIGHT JOIN
+- ANSI와 PL/SQL 차이
+- 3개 테이블 JOIN
+- CUD 개념
+- INSERT
+- UPDATE
+- DELETE
+- SQL 
