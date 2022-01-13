@@ -14,3 +14,6 @@ Oracle 학습 리포지토리
 - IN 절
 - BETWEEN AND
 - LIKE문
+
+### 3일차 학습
+- 
